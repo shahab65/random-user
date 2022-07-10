@@ -1,3 +1,4 @@
+import UserCard from "components/UserCard";
 import React from "react";
 type Props = {
   firstName: string;
@@ -9,10 +10,12 @@ const User = (props: Props) => {
   const { firstName, lastName, image, country } = props;
   return (
     <div>
-      <img src={image} alt={firstName + lastName} />
-      <div>{firstName}</div>
-      <div>{lastName}</div>
-      <div>{country}</div>
+      <UserCard
+        firstName={firstName}
+        lastName={lastName}
+        image={image}
+        country={country}
+      />
     </div>
   );
 };
