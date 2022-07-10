@@ -12,6 +12,7 @@ const Button = (props: Props) => {
     <button
       onClick={onClick}
       className={`${styles.button} ${isSecondary && styles.secondary}`}
+      data-testid="button"
     >
       {children}
     </button>
