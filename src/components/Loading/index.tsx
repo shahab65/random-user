@@ -6,7 +6,7 @@ type Props = {
   color?: string;
 };
 const Loading = (props: Props) => {
-  const { size = 30, color = "green" } = props;
+  const { size = 30, color = "#3c4390" } = props;
   return <ClipLoader size={size} color={color} />;
 };
 

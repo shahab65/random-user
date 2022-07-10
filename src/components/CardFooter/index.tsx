@@ -22,7 +22,7 @@ const CardFooter = (props: Props) => {
         </Button>
       )}
       <Button onClick={onFetchRandomUser}>
-        {isFetching ? <Loading size={10} color={"white"} /> : "Show"}
+        {isFetching ? <Loading size={8} color={"#f5dee0"} /> : "Show"}
       </Button>
     </div>
   );

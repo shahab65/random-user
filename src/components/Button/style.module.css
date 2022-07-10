@@ -1,9 +1,9 @@
 .button {
   width: 100%;
-  background: green;
+  background: #3c4390;
   text-decoration: none;
 
-  color: #ffffff;
+  color: #f5dee0;
   padding: 10px 20px 10px 20px;
   outline: none;
   border: none;
@@ -11,7 +11,9 @@
 
 .button:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 .secondary {
-  background: red;
+  background: #f5dee0;
+  color: #3c4390;
 }
