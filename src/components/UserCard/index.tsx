@@ -13,7 +13,7 @@ type Props = {
 const UserCard = (props: Props) => {
   const [isHide, setIsHide] = useState(false);
   const onSetIsHide = () => {
-    setIsHide(true);
+    setIsHide((prev) => !prev);
   };
   const onRefetch = () => {
     setIsHide(false);
@@ -40,6 +40,7 @@ const UserCard = (props: Props) => {
         onFetchRandomUser={onRefetch}
         isFetching={isFetching}
         onSetIsHide={onSetIsHide}
+        isHide={isHide}
       />
     </div>
   );

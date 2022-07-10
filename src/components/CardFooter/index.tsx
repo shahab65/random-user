@@ -7,18 +7,21 @@ type Props = {
   onFetchRandomUser: () => void;
   isFetching: boolean;
   onSetIsHide: () => void;
+  isHide: boolean;
 };
 
 const CardFooter = (props: Props) => {
-  const { onFetchRandomUser, isFetching, onSetIsHide } = props;
+  const { onFetchRandomUser, isFetching, onSetIsHide, isHide } = props;
 
   return (
     <div className={styles.cardFooter}>
-      <Button onClick={onSetIsHide} isSecondary>
-        hide
-      </Button>
+      {!isHide && (
+        <Button onClick={onSetIsHide} isSecondary>
+          Hide
+        </Button>
+      )}
       <Button onClick={onFetchRandomUser}>
-        {isFetching ? <CircularProgress size={10} color="inherit" /> : "show"}
+        {isFetching ? <CircularProgress size={10} color="inherit" /> : "Show"}
       </Button>
     </div>
   );
