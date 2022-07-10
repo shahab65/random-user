@@ -32,12 +32,12 @@ const UserCard = (props: Props) => {
         height={130}
       />
 
-      <div className={"text-primary mb-8"} data-testid="fullName">
+      <p className={"text-primary mb-8"} data-testid="fullName">
         {isHide ? "Full Name" : fullName}
-      </div>
-      <div className={"text-primary mb-8"} data-testid="country">
+      </p>
+      <p className={"text-primary mb-8"} data-testid="country">
         {isHide ? "Country" : country}
-      </div>
+      </p>
       <CardFooter
         onFetchRandomUser={onRefetch}
         isFetching={isFetching}
