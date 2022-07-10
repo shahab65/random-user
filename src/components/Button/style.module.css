@@ -1,9 +1,9 @@
 .button {
   width: 100%;
-  background: #3c4390;
+  background: var(--primary);
   text-decoration: none;
 
-  color: #f5dee0;
+  color: var(--secondary);
   padding: 10px 20px 10px 20px;
   outline: none;
   border: none;
@@ -14,6 +14,6 @@
   opacity: 0.8;
 }
 .secondary {
-  background: #f5dee0;
-  color: #3c4390;
+  background: var(--secondary);
+  color: var(--primary);
 }
