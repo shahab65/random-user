@@ -2,11 +2,17 @@ import React from "react";
 import Button from "components/Button";
 import styles from "./style.module.css";
 
-const CardFooter = () => {
+type Props = {
+  onFetchRandomUser: () => void;
+};
+
+const CardFooter = (props: Props) => {
+  const { onFetchRandomUser } = props;
+
   return (
     <div className={styles.cardFooter}>
       <Button isSecondary>hide</Button>
-      <Button>show</Button>
+      <Button onClick={onFetchRandomUser}>show</Button>
     </div>
   );
 };

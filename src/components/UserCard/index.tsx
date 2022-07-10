@@ -6,10 +6,11 @@ type Props = {
   lastName: string;
   image: string;
   country: string;
+  onFetchRandomUser: () => void;
 };
 
 const UserCard = (props: Props) => {
-  const { firstName, lastName, image, country } = props;
+  const { firstName, lastName, image, country, onFetchRandomUser } = props;
   const fullName = firstName + " " + lastName;
   return (
     <div className={styles.userCard}>
@@ -17,7 +18,7 @@ const UserCard = (props: Props) => {
 
       <div className={"text-primary mb-8"}>{fullName}</div>
       <div className={"text-primary mb-8"}>{country}</div>
-      <CardFooter />
+      <CardFooter onFetchRandomUser={onFetchRandomUser} />
     </div>
   );
 };

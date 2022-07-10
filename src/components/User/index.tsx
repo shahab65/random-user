@@ -5,9 +5,10 @@ type Props = {
   lastName: string;
   image: string;
   country: string;
+  onFetchRandomUser: () => void;
 };
 const User = (props: Props) => {
-  const { firstName, lastName, image, country } = props;
+  const { firstName, lastName, image, country, onFetchRandomUser } = props;
   return (
     <div>
       <UserCard
@@ -15,6 +16,7 @@ const User = (props: Props) => {
         lastName={lastName}
         image={image}
         country={country}
+        onFetchRandomUser={onFetchRandomUser}
       />
     </div>
   );

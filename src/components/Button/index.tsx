@@ -4,11 +4,15 @@ import styles from "./style.module.css";
 type Props = {
   children: React.ReactNode;
   isSecondary?: boolean;
+  onClick?: () => void;
 };
 const Button = (props: Props) => {
-  const { children, isSecondary = false } = props;
+  const { children, isSecondary = false, onClick } = props;
   return (
-    <button className={`${styles.button} ${isSecondary && styles.secondary}`}>
+    <button
+      onClick={onClick}
+      className={`${styles.button} ${isSecondary && styles.secondary}`}
+    >
       {children}
     </button>
   );

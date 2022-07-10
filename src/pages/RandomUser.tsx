@@ -4,7 +4,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import User from "components/User";
 
 const RandomUser = () => {
-  const { isLoading, data } = useRandomUser();
+  const { isLoading, data, refetch } = useRandomUser();
+  const onFetchRandomUser = () => {
+    refetch();
+  };
   console.log("randomUser", data);
   if (isLoading) {
     return <CircularProgress />;
@@ -15,6 +18,7 @@ const RandomUser = () => {
       lastName={data[0].name.last}
       image={data[0].picture.large}
       country={data[0].location.country}
+      onFetchRandomUser={onFetchRandomUser}
     />
   );
 };
