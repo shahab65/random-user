@@ -6,7 +6,8 @@ import config from "constants/config";
 export function useRandomUser() {
   return useQuery<any, any>(
     "randomUser",
-    () => axios.get(config.apiEndpoints.randomUser).then((res) => res),
+    () =>
+      axios.get(config.apiEndpoints.randomUser).then((res) => res.data.results),
     {
       //   retry: 0,
       refetchOnWindowFocus: false,
