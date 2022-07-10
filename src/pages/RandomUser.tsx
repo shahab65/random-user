@@ -1,7 +1,7 @@
 import React from "react";
 import { useRandomUser } from "calls/user";
-import CircularProgress from "@mui/material/CircularProgress";
 import UserCard from "components/UserCard";
+import Loading from "components/Loading";
 
 const RandomUser = () => {
   const { isLoading, data, refetch, isFetching } = useRandomUser();
@@ -11,7 +11,7 @@ const RandomUser = () => {
   const user = data?.results[0];
   return (
     <div className="flex-c-c height-100vh">
-      {isLoading && <CircularProgress />}
+      {isLoading && <Loading />}
       {user && (
         <UserCard
           firstName={user.name.first}
