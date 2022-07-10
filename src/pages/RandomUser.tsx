@@ -4,20 +4,20 @@ import CircularProgress from "@mui/material/CircularProgress";
 import UserCard from "components/UserCard";
 
 const RandomUser = () => {
-  const { isLoading, data, refetch, isFetching, isSuccess } = useRandomUser();
+  const { isLoading, data, refetch, isFetching } = useRandomUser();
   const onFetchRandomUser = () => {
     refetch();
   };
-
+  const user = data?.results[0];
   return (
     <div className="flex-c-c height-100vh">
       {isLoading && <CircularProgress />}
-      {isSuccess && (
+      {user && (
         <UserCard
-          firstName={data[0].name.first}
-          lastName={data[0].name.last}
-          image={data[0].picture.large}
-          country={data[0].location.country}
+          firstName={user.name.first}
+          lastName={user.name.last}
+          image={user.picture.large}
+          country={user.location.country}
           onFetchRandomUser={onFetchRandomUser}
           isFetching={isFetching}
         />

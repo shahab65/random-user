@@ -26,7 +26,7 @@ const UserCard = (props: Props) => {
     <div className={styles.userCard}>
       <img
         src={isHide ? "" : image}
-        alt={fullName}
+        alt={isHide ? "" : fullName}
         className={styles.img}
         width={130}
         height={130}
