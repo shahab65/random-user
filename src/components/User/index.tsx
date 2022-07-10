@@ -6,9 +6,11 @@ type Props = {
   image: string;
   country: string;
   onFetchRandomUser: () => void;
+  isFetching: boolean;
 };
 const User = (props: Props) => {
-  const { firstName, lastName, image, country, onFetchRandomUser } = props;
+  const { firstName, lastName, image, country, onFetchRandomUser, isFetching } =
+    props;
   return (
     <div>
       <UserCard
@@ -17,6 +19,7 @@ const User = (props: Props) => {
         image={image}
         country={country}
         onFetchRandomUser={onFetchRandomUser}
+        isFetching={isFetching}
       />
     </div>
   );

@@ -7,18 +7,29 @@ type Props = {
   image: string;
   country: string;
   onFetchRandomUser: () => void;
+  isFetching: boolean;
 };
 
 const UserCard = (props: Props) => {
-  const { firstName, lastName, image, country, onFetchRandomUser } = props;
+  const { firstName, lastName, image, country, onFetchRandomUser, isFetching } =
+    props;
   const fullName = firstName + " " + lastName;
   return (
     <div className={styles.userCard}>
-      <img src={image} alt={fullName} className={styles.img} />
+      <img
+        src={image}
+        alt={fullName}
+        className={styles.img}
+        width={130}
+        height={130}
+      />
 
       <div className={"text-primary mb-8"}>{fullName}</div>
       <div className={"text-primary mb-8"}>{country}</div>
-      <CardFooter onFetchRandomUser={onFetchRandomUser} />
+      <CardFooter
+        onFetchRandomUser={onFetchRandomUser}
+        isFetching={isFetching}
+      />
     </div>
   );
 };
